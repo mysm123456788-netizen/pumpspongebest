@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>PumpSponge (PSFNG)</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <!-- HERO (image placed correctly) -->
+  <header class="hero">
+    <div class="hero-inner">
+      <div class="left">
+        <img src="images/IMG_9490.png" alt="SpongeBob" class="sb"/> <!-- Correct image in the hero section -->
+        <div class="contract">
+          <span>Contract Address:</span>
+          <code>Coming Soon...</code>
+        </div>
+      </div>
+      <div class="right">
+        <h1 class="brand">PumpSponge <em>(PSFNG)</em></h1>
+        <p class="tagline">The splashiest meme coin on Pump.fun</p>
+        <div class="actions">
+          <a class="btn" href="#" target="_blank" rel="noopener">Buy</a>
+          <a class="btn outline" href="#" target="_blank" rel="noopener">Chart</a>
+          <a class="btn outline" href="#" target="_blank" rel="noopener">Community</a>
+        </div>
+      </div>
+    </div>
+    <div id="pills"></div>
+  </header>
+
+  <!-- WHITE SECTION with winged pill background -->
+  <section class="sea">
+    <!-- GOAL (requested: above gallery) -->
+    <div class="goal">
+      <h2>Our Goal</h2>
+      <p>
+        Our goal is to reach Bikini Bottom.<br/>
+        This goal will be achieved once we hit a market cap of <strong>$1,000,000</strong>.<br/>
+        Let’s reach our goal together!
+      </p>
+    </div>
+
+    <h2 class="gallery-title">Meme Gallery</h2>
+    <div class="gallery">
+      <img src="images/IMG_9486.png" alt="Gallery Item 1" />
+      <img src="images/IMG_9487.png" alt="Gallery Item 2" />
+      <img src="images/IMG_9485.png" alt="Gallery Item 3" />
+      <img src="images/IMG_9493.png" alt="Extra Gallery" />
+    </div>
+  </section>
+
+  <footer class="footer">
+    Pump Fun always the best – Ticker: PSFNG
+  </footer>
+
+  <script>
+    // (Same as before) create floating pills in the hero (green) section
+    const svgPill = "data:image/svg+xml;utf8," + encodeURIComponent(`
+      <svg xmlns='http://www.w3.org/2000/svg' width='120' height='48' viewBox='0 0 120 48'>
+        <defs>
+          <linearGradient id='g' x1='0' x2='0' y1='0' y2='1'>
+            <stop offset='0' stop-color='#4ee18f'/>
+            <stop offset='1' stop-color='#10b26b'/>
+          </linearGradient>
+        </defs>
+        <g transform='translate(8,6)'>
+          <rect x='0' y='0' rx='24' ry='24' width='96' height='36' fill='#0f4a3f' opacity='0.9'/>
+          <clipPath id='cap'><rect x='2' y='2' rx='22' ry='22' width='92' height='32'/></clipPath>
+          <g clip-path='url(#cap)'>
+            <rect x='2' y='2' width='46' height='32' fill='url(#g)' rx='16' ry='16'/>
+            <rect x='48' y='2' width='46' height='32' fill='#e8f4ef' rx='16' ry='16'/>
+          </g>
+          <path d='M18 14c-3 3-5 6-5 9' stroke='white' stroke-width='3' stroke-linecap='round' fill='none' opacity='0.9'/>
+        </g>
+      </svg>
+    `);
+    const pillsWrap = document.getElementById('pills');
+    const COUNT = 12;
+    for (let i=0;i<COUNT;i++){{
+      const d = document.createElement('div');
+      d.className = 'pill';
+      d.style.left = Math.random()*100 + '%';
+      d.style.animationDuration = (6 + Math.random()*6) + 's';
+      d.style.animationDelay = (-Math.random()*6) + 's';
+      d.style.transform = 'scale(' + (0.7 + Math.random()*0.7) + ')';
+      d.style.backgroundImage = `url(${svgPill})`;
+      pillsWrap.appendChild(d);
+    }}
+  </script>
+</body>
+</html>
